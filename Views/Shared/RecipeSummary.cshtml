@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Recipes.Models.Recipe>
+
+
+        
+    <table class="table">
+        <thead class="class=" thead-light"">
+            <tr>
+                <th>Recipe Name:</th>
+                <th>Preaparetion Time</th>
+                <th>Chef</th>
+            </tr>
+        </thead>
+        @foreach (var r in Model)
+        {
+            <tbody>
+                <tr>
+                    <td>@r.RecipeName</td>
+                    <td>@r.PreparationTime</td>
+                    <td>@r.Chef</td>
+                    <td>
+                        <a asp-action="ViewRecipe" asp-controller="Home" asp-route-id="@r.RecipeID" class="btn btn-light ml-lg-6">Here How</a>
+                    </td>
+                    <td>
+                        <a asp-action="ReviewRecipe" class="btn btn-light mr-lg-6">Review</a>
+                    </td>
+                </tr>
+            </tbody>
+        }
+        </table>
+        
+

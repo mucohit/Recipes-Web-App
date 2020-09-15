@@ -1,0 +1,48 @@
+﻿@model Recipes.Models.Recipe
+
+@{
+    ViewBag.Title = Model.RecipeName;
+    Layout = "_AdminLayout";
+
+    if(Model.RecipeID != 0) {
+        ViewBag.Header = $"{Model.RecipeName} Edit Page";
+    }
+    else
+    {
+        ViewBag.Header = "Adding Recipe";
+        ViewBag.Title = "Adding Recipe";
+    }
+}
+
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="RecipeID" />
+        <div class="form-group">
+            <label asp-for="RecipeName">Name:</label>
+            <input asp-for="RecipeName" class="form-control"  />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="PreparationTime">Preparation Time:</label>
+            <input asp-for="PreparationTime" class="form-control"  />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Chef">Chef:</label>
+            <input asp-for="Chef" class="form-control"  />
+        </div class="form-group">
+
+        <div class="form-group">
+            <label asp-for="Ingredients">Ingredients:</label>
+            <input asp-for="Ingredients" class="form-control"  />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Description">Description:</label>
+            <textarea asp-for="Description" class="form-control" ></textarea>
+        </div>
+       
+        <div>
+            <button type="submit" class="btn btn-outline-secondary" >Save</button>
+            <a asp-action="Index" class="btn btn-outline-danger">Cancel</a>
+        </div>
+    </form>

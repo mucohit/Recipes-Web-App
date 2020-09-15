@@ -1,0 +1,30 @@
+﻿@model Recipes.Models.ViewModel.LoginModel
+
+@{ 
+    ViewBag.Title = "Log In";
+    Layout = "_AdminLayout";
+
+}
+    <div asp-validation-summary="All" class="text-danger"></div> @*validation mesage*@
+
+    <form asp-action="Login" asp-controller="Account"  method="post">
+        <input type="hidden" asp-for="ReturnUrl"/>
+        <div class="form-group">
+            <label asp-for="Name">
+                UserName:
+            </label>
+            <div><span asp-validation-for="Name" class="text-danger"></span></div> @*spesific validation mesage*@ 
+
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Password">
+                Password:
+            </label>
+            <div><span asp-validation-for="Password" class="text-danger"></span></div>
+          
+            <input asp-for="Password" class="form-control"/>
+        </div>
+        <button type="submit"  class="btn btn-success">Log In</button>
+
+    </form>

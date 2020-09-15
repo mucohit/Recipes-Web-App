@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Recipes.Models.Recipe>
+@{
+    ViewBag.Title = "Recipe List";
+}
+    <article class="mt-4">
+        <h4 class="display-3 center ">Recipe Lists</h4>
+        <br />
+            @{
+                Html.RenderPartial("RecipeSummary");
+            }
+
+        <br />
+    </article>
+

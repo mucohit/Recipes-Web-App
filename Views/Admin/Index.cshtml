@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Recipes.Models.Recipe>
+@{
+    ViewBag.Title = "All Recipes";
+    Layout = "_AdminLayout";
+    ViewBag.Header = "List of All Recipes";
+}
+
+<table class="table">
+    <tr class="table-active">
+        <th>ID</th>
+        <th>Recipe Name</th>
+        <th>Chef</th>
+        <th>Preparation Time</th>
+        <th>Description</th>
+        <th>Ingredients</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var r in Model)
+    {
+    <tr>
+    <td>@r.RecipeID</td>
+    <td>@r.RecipeName</td>
+    <td>@r.Chef</td>
+    <td>@r.PreparationTime</td>
+        <td>@r.Description</td>
+        <td>@r.Ingredients</td>
+        <td><a asp-action="Edit" class="btn btn-warning " asp-route-recipeId="@r.RecipeID">Edit</a></td>
+        <td>
+            <form asp-action="Delete" method="post" class="form-inline" >
+                <input type="hidden" name="RecipeId" value="@r.RecipeID"/>
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </td>
+        <td>
+            <a></a>
+        </td>
+    </tr>
+    }
+</table>
+<div>
+    <a asp-action="Create" class="btn btn-primary ">
+        Add Recipe
+    </a>
+</div>

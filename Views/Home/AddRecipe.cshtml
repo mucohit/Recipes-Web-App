@@ -1,0 +1,38 @@
+﻿@model Recipes.Models.Recipe
+
+@{
+    ViewBag.Title = "Add Recipe";
+}
+    <h4 class="form-row display-3 mt-3">Add Recipe</h4>
+    <form class="form" asp-action="AddRecipe" method="post">
+        <div class=" mb-2">
+            <label class="col-form-label mr-2" asp-for="RecipeName">Recipe Name:</label>
+            <input type="text" class="form-control" asp-for="RecipeName" placeholder="Enter Recipe Name" id="recipeName" />
+        </div>
+        <div class="mb-3">
+            <label class="col-form-label  " asp-for="Description">Description:</label>
+            <textarea placeholder="Enter Description" asp-for="Description" class="form-control float-right mb-2" id="description"></textarea>
+        </div>
+
+        <div class="mt-3 mb-2">
+            <label class="col-form-label " asp-for="Chef">Chef:</label>
+            <input type="text" class="form-control form-inline" asp-for="Chef" placeholder="Enter Chef Name" id="chef" />
+            <label class="col-form-label" asp-for="PreparationTime">PreparationTime:</label>
+            <input class="form-control" asp-for="PreparationTime" type="text" placeholder="Enter Preparation Time" />
+        </div>
+        <div class="mb-4">
+            <label class="col-form-label mr-2 " asp-for="Ingredients">Ingredients:</label>
+            <textarea placeholder="Enter Ingredients" asp-for="Ingredients" class="form-control float-right" id="ingredients"></textarea>
+        </div>
+        <div class="btn float-right">
+            <input type="reset"  class="btn btn-danger" name="Reset"/>
+            <button type="submit" class="btn btn-success" asp-action="AddRecipe">Submit</button>
+        </div>
+
+        <br /><br /><br /><br /><br /><br /><br /><br />
+    </form>
+
+
+
+
+

@@ -1,0 +1,52 @@
+﻿body {
+    background-color: #5ebad8;
+}
+.card-body {
+    background-color: #42b2c4;
+}
+.card-header {
+    background-color: #42b2c4;
+}
+.mySlides {
+    display: none;
+}
+#formArea {
+    background-color: #2096a9;
+}
+#nav-items {
+    color: black;
+}
+#nav-items-down{
+    background-color:#17a2b8;
+}
+#formDiv {
+    background-color: #2096a9;
+}
+.btn btn-danger{
+    border:double;
+    border-color: darkblue;
+}
+#socialMediaCardHeader {
+    background-color: #2096a9;
+}
+#socialMediaCard {
+    background-color: #94d2e4;
+}
+#listCards {
+    background-color: #94d2e4;
+    border: solid;
+    border-color: aliceblue;
+}
+#header{
+    color:linen;
+}
+.form-control {
+    background-color: #94d2e4;
+}
+#instagram{
+    color: red;
+}
+
+
+
+

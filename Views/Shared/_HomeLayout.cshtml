@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="~/Content/index1.css" rel="stylesheet" />
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-info fixed-top">
+        <div class="nav-brand">
+            <a asp-action="index">
+                <img src="~/Content/logo.png" height="50px" id="logo" />
+            </a>
+        </div>
+        <div>
+            <ul class="navbar-nav navbar-light active">
+                <li class="nav-item mr-lg-4 ml-lg-4">
+                    <a asp-action="Index" class="nav-link" id="nav-items">Home</a>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a asp-action="AddRecipe" class="nav-link" id="nav-items">Add Recipe</a>
+                </li>
+                <li class="nav-item mr-lg-4">
+                    <a asp-action="RecipeList" class="nav-link" id="nav-items">Recipe List</a>
+
+                </li>
+            </ul>
+        </div>
+
+               @*Search Bar*@
+            <form class="navbar-form navbar-right" asp-controller="Home" asp-action="RecipeList" method="get">
+               
+                    <div class="input-group float-left">
+                        <input type="text" class="form-control" name="s" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default bg-info" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                
+            </form>
+
+        
+    </nav>
+    <div class="container">
+
+        <br /><br />
+        <div class="row">
+            <div class="col-9 " id="formArea">
+                @RenderBody()
+            </div>
+
+            <div class="col-md-3">
+                <br />
+                <div class="card text-white">
+                    <div class="card-header bg-info">Follow Us</div>
+                    <div class="card-body" id="socialMediaCard">
+                        <ul class="list-group list-group-horizontal justify-content-md-center" id="socialMediaCard">
+                            <a href="https://www.facebook.com/"> <li class="list-group-item " id="socialMediaCard"><i class="fab fa-facebook"></i></li></a>
+                            <a href="https://www.instagram.com/" class="text-danger"><li id="socialMediaCard" class="list-group-item "><i class="fab fa-instagram"></i></li></a>
+                            <a href="https://twitter.com/" id="socialMediaCard">
+                                <li class="list-group-item " id="socialMediaCard">
+                                    <i class="fab fa-twitter"></i>
+                                </li>
+                            </a>
+                            <a href="https://www.linkedin.com/" class="text-info "><li id="socialMediaCard" class="list-group-item"><i class="fab fa-linkedin"></i></li></a>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/dae7e6ac78.js" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+﻿@model Recipes.Models.Recipe
+@{
+    ViewBag.Title = "View Recipe";
+}
+
+<div class="row">
+    <h3 class="col-8 display-4 mt-4" id="header"><strong></strong></h3>
+
+    <div class="col-3 mr-3"><img src="~/Content/sushi.jpeg" class="rounded-circle  mt-4" height="150px" width="150px" /></div>
+
+    <div class="col-6  ml-2 mb-2">
+
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-6 ml-2 mb-2 rounded">
+        <h3 class="display-3">@Model.RecipeName</h3>
+        <h3 class="display-5">Description:</h3><p class="text-justify ">
+            @Model.Description
+        </p>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-4 rounded" id="description">
+        <h3 class="display-5">Ingredients</h3>
+        @Model.Ingredients
+        <div class="col-4 ">
+            <table class="table  ">
+                <tbody>
+                    <tr>
+                        <th>Chef:</th>
+                        <td>@Model.Chef</td>
+                        <th><i class="far fa-clock"></i></th>
+                        <td>@Model.PreparationTime</td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <table class="text-center ">
+                <tfoot>
+                    <tr>
+                        <td><i class="fas fa-star"></i></td>
+                        <td><i class="fas fa-star"></i></td>
+                        <td><i class="fas fa-star"></i></td>
+                        <td><i class="fas fa-star"></i></td>
+                        <td><i class="fas fa-star-half-alt"></i></td>
+                        <td>4.4</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+<br />
+<br />
+<br />
